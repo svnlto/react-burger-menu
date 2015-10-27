@@ -1889,6 +1889,17 @@ module.exports = resolveStyles;
 (function (global){
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
+var _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+            for (var key in source) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+        return target;
+    };
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
 }
@@ -1937,12 +1948,11 @@ var BurgerIcon = (0, _radium2['default'])(_react2['default'].createClass({
             }), _react2['default'].createElement('span', {
                 className: 'bm-burger-icon',
                 style: this.getLineStyle(2)
-            }), _react2['default'].createElement('button', {
-                onClick: this.props.onClick,
+            }), _react2['default'].createElement('button', _extends({}, this.props, {
                 onMouseEnter: this.handleHover,
                 onMouseLeave: this.handleHover,
                 style: buttonStyle
-            }, 'Open Menu'));
+            }), 'Open Menu'));
         }
     }));
 exports['default'] = BurgerIcon;
@@ -2160,7 +2170,7 @@ exports['default'] = function (styles) {
                     var snap = undefined;
                     try {
                         snap = function () {
-                            throw new Error('Cannot find module \'imports?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js\' from \'/Users/imogen/code/react-burger-menu/src\'');
+                            throw new Error('Cannot find module \'imports?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js\' from \'/Users/svenlito/Sites/tmp/react-burger-menu/src\'');
                         }();
                     } catch (e) {
                         snap = require('snapsvg');
@@ -2228,7 +2238,10 @@ exports['default'] = function (styles) {
             }, _react2['default'].createElement('nav', {
                 className: 'bm-item-list',
                 style: { height: '100%' }
-            }, items)), _react2['default'].createElement('div', { style: styles.closeButton ? styles.closeButton(this.state.isOpen, this.props.width) : {} }, _react2['default'].createElement(_CrossIcon2['default'], { onClick: this.toggleMenu }))), _react2['default'].createElement(_BurgerIcon2['default'], { onClick: this.toggleMenu }));
+            }, items)), _react2['default'].createElement('div', { style: styles.closeButton ? styles.closeButton(this.state.isOpen, this.props.width) : {} }, _react2['default'].createElement(_CrossIcon2['default'], { onClick: this.toggleMenu }))), _react2['default'].createElement(_BurgerIcon2['default'], {
+                className: 'bm-menu-button-toggle',
+                onClick: this.toggleMenu
+            }));
         }
     }));
 };
