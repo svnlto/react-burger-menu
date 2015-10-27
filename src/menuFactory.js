@@ -197,7 +197,7 @@ export default (styles) => {
               <CrossIcon onClick={ this.toggleMenu } />
             </div>
           </div>
-          <BurgerIcon onClick={ this.toggleMenu } />
+          <BurgerIcon className={"bm-menu-button-toggle"} onClick={ this.toggleMenu } />
         </div>
       );
     }

@@ -45,7 +45,7 @@ let BurgerIcon = Radium(React.createClass({
         <span className="bm-burger-icon" style={ this.getLineStyle(0) }></span>
         <span className="bm-burger-icon" style={ this.getLineStyle(1) }></span>
         <span className="bm-burger-icon" style={ this.getLineStyle(2) }></span>
-        <button onClick={ this.props.onClick }
+        <button {...this.props }
           onMouseEnter={ this.handleHover }
           onMouseLeave={ this.handleHover }
           style={ buttonStyle }>
